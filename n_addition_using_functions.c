@@ -23,12 +23,15 @@ int get_user_count() {
 }
 
 // Module 2: Pure mathematical processing
-int calculate_sum(int count) {
-    int i, current_number, running_total = 0;
-    for(i = 1; i <= count; i++) {
+int calculate_sum(int count) 
+{
+    int i, current_number, total_sum = 0;
+
+    for(i = 1; i <= count; i++)
+     {
         printf("Enter number %d: ", i);
         scanf("%d", &current_number);
-        running_total = running_total + current_number;
+        total_sum = total_sum + current_number;
     }
-    return running_total;
+    return total_sum;
 }
