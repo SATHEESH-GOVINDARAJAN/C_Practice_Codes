@@ -1,14 +1,33 @@
-#include<stdio.h>
-int main()
-{
-    // Addition of two numbers after getting the vaules from user
+#include <stdio.h>
 
-int first_number, second_number,total_sum;
-printf("Enter first value:");
-scanf("%d",&first_number);
-printf("\nEnter second value:");
-scanf("%d",&second_number);
-total_sum = first_number + second_number;
-printf("\n %d + %d = %d", first_number,second_number,total_sum);
-return 0;
+// Function Prototype: This tells the compiler "Expect these tools later"
+int get_user_input(char* prompt);
+int addition(int num1, int num2);
+
+int main() {
+    int first_number, second_number, total_sum;
+
+    // We call the "Sensor" function twice to get values
+    first_number = get_user_input("Enter first value: ");
+    second_number = get_user_input("Enter second value: ");
+
+    // We call the "Processor" function to do the math
+    total_sum = addition(first_number, second_number);
+
+    printf("\n %d + %d = %d\n", first_number, second_number, total_sum);
+
+    return 0;
+}
+
+// The "Sensor" Tool: Handles logic for getting data
+int get_user_input(char* prompt) {
+    int value;
+    printf("%s", prompt);
+    scanf("%d", &value);
+    return value;
+}
+
+// The "Processor" Tool: Pure logic, no input/output interference
+int addition(int num1, int num2) {
+    return num1 + num2;
 }
