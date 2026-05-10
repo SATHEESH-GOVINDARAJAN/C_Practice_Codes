@@ -31,7 +31,7 @@ int calculate_sum(int count)
      {
         printf("Enter number %d: ", i);
         scanf("%d", &current_number);
-        total_sum = total_sum + current_number;
+        total_sum = total_sum - current_number;
     }
     return total_sum;
 }
